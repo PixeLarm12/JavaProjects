@@ -39,6 +39,7 @@ public class Lista
         {
             ant=aux;
             aux=aux.getProx();
+            if(aux==null)break;
             if(v<=aux.getValor())
             {
                 ant.setProx(cx);
@@ -47,15 +48,26 @@ public class Lista
                 return;
             }
         }
-    }
 
-    public int Removecx()
-    {
-        int volta;
+        fim=cx;
+        ant.setProx(cx);
+        return;
+    }   
 
-        aux=inicio;
-
-    }
-    
+    public void Mostrar()
+	{
+		aux=inicio;
+		System.out.println("Mostrando a Lista:");
+		
+   		while(aux != null)
+   		{
+   			
+   			System.out.println("=>"+aux.getValor());
+   			aux=aux.getProx();
+   			
+   		}	
+   			
+   		System.out.println("\n Acabou a Fila");
+	}
     
 }
