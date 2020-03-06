@@ -23,5 +23,12 @@ public class UsaLista
         else
             System.out.printf("\n Nao achou 15");
 
+        ordena.Removecx(15);
+        System.out.printf("\n Valor removido=15");
+        ordena.Mostrar();
+
+        ordena.Removecx(50);
+        System.out.printf("\n Valor removido=50");
+        ordena.Mostrar();
     }
 }

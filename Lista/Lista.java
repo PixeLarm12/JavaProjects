@@ -72,6 +72,38 @@ public class Lista
 
     public boolean Removecx(int vv)
     {
+        if(inicio == null)
+        {
+            System.out.println("Lista vazia");
+            return false;
+        }
+
+        aux=inicio;
+        
+        if(vv==aux.getValor())
+        {
+            inicio=aux.getProx();
+            aux=null;
+            return true;
+        }
+
+        while(aux!=null)
+        {
+            ant=aux;
+            aux=aux.getProx();
+            if(aux==null)break;
+            if(vv==aux.getValor())
+            {
+                ant.setProx(aux.getProx());
+
+                if(aux.getProx() == null) fim=ant;
+
+                aux=null;
+
+                return true;
+            }
+        }
+         
         return false;
     }
     
@@ -84,6 +116,8 @@ public class Lista
     {
         if(c == null)
             return false;
+
+        System.out.println("procurando=" + c.getValor());
 
         if(c.getValor() == v)
             return true;
