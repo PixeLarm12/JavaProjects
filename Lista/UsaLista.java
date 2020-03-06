@@ -15,11 +15,13 @@ public class UsaLista
     	ordena.Criacx(15);
 
         ordena.Criacx(50);
-    	
-    	
-    	//valor=ordena.removecx();    	
+
+
     	ordena.Mostrar();
-    	
-    	System.out.println("Valor removido =");
+        if(ordena.Procurar(15))
+            System.out.printf("\n Achou 15");
+        else
+            System.out.printf("\n Nao achou 15");
+
     }
 }

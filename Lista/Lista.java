@@ -69,5 +69,25 @@ public class Lista
    			
    		System.out.println("\n Acabou a Fila");
 	}
+
+    public boolean Removecx(int vv)
+    {
+        return false;
+    }
     
+    public boolean Procurar(int vv)
+    {
+        return recursiva(inicio, vv);
+    }
+
+    public boolean recursiva(Caixa c, int v)
+    {
+        if(c == null)
+            return false;
+
+        if(c.getValor() == v)
+            return true;
+
+        return recursiva(c.getProx(), v);
+    }
 }
