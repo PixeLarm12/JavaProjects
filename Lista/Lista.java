@@ -124,4 +124,27 @@ public class Lista
 
         return recursiva(c.getProx(), v);
     }
+
+    public void MostrarRecur()
+	{
+        System.out.println("Inicio->fim");
+        MostraMostra(inicio);
+        System.out.println("fim lista");
+
+    }
+
+    public void MostraMostra(Caixa c)
+    {
+		aux=c;
+
+   		if(aux != null)
+   		{
+   			
+   			System.out.println("=>" + aux.getValor() + "<=");
+   			MostraMostra(c.getProx());
+   			
+   		}	
+   			
+   		System.out.println("\n Acabou a Fila");
+	}
 }
