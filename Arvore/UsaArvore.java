@@ -9,5 +9,6 @@ public class UsaArvore
         x.criacx3(5);
         x.criacx4(15);
         x.criacx5(30);
+        x.mostratudo();
     }
 }

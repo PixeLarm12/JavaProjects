@@ -1,10 +1,10 @@
-import.java.util.Scanner;
+import java.util.Scanner;
 
 public class Arvore 
 {
 
-    private CaixaArv cx1, cx2, cx3, cx4, cx5;
-    private CaixaArv aux, raiz;
+    private CaixaArvore cx1, cx2, cx3, cx4, cx5;
+    private CaixaArvore aux, raiz;
 
     public Arvore() 
     {
@@ -19,13 +19,13 @@ public class Arvore
 
     public void criacx1(int v)
     {
-        cx1=new CaixaArv(v);
+        cx1=new CaixaArvore(v);
         raiz=cx1;
     }   
 
     public void criacx2(int v)
     {
-        cx2=new CaixaArv(v);
+        cx2=new CaixaArvore(v);
 
         if(v<cx1.getValor())
         {
@@ -39,7 +39,7 @@ public class Arvore
 
     public void criacx3(int v)
     {
-        cx3=new CaixaArv(v);
+        cx3=new CaixaArvore(v);
         aux=raiz;
         
         while(aux!=null)
@@ -74,7 +74,7 @@ public class Arvore
 
     public void criacx4(int v)
     {
-        cx4=new CaixaArv(v);
+        cx4=new CaixaArvore(v);
         aux=raiz;
         
         while(aux!=null)
@@ -109,7 +109,7 @@ public class Arvore
 
     public void criacx5(int v)
     {
-        cx5=new CaixaArv(v);
+        cx5=new CaixaArvore(v);
         aux=raiz;
         
         while(aux!=null)
@@ -153,7 +153,7 @@ public class Arvore
         {
             System.out.print("\n valor=" +aux.getValor());
             System.out.print("\n (E)sq, (D)ir, (F)im?");
-            tecla.teclado.nextLine();
+            tecla=teclado.nextLine();
 
             if(tecla.equals("E"))
                 aux=aux.getEsq();
@@ -165,5 +165,23 @@ public class Arvore
                 break;
         }
         System.out.print("\n Fim \n");
+    }
+    
+    public void mostratudo()
+    {
+        mostrarecursivo(raiz);
+    }
+
+    public void mostrarecursivo(CaixaArvore c)
+    {
+        if(c==null)
+        {
+            return;
+        }
+
+        //decrescente
+        mostrarecursivo(c.getEsq());
+        System.out.print("\n valor=" + c.getValor());
+        mostrarecursivo(c.getDir());
     }
 }

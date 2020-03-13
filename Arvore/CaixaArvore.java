@@ -1,32 +1,32 @@
-public class CaixaArv 
+public class CaixaArvore 
 {
-	private CaixaArv esq;
-	private CaixaArv dir;
+	private CaixaArvore esq;
+	private CaixaArvore dir;
 	private int valor;
 	
-	public CaixaArv(int valorn)
+	public CaixaArvore(int valorn)
 	{
 	   	setValor(valorn);
 	   	setEsq(null);
 	   	setDir(null);
 	}
    
-	public void setDir(CaixaArv endereco)
+	public void setDir(CaixaArvore endereco)
 	{
 		this.dir=endereco;
 	}
 	
-	public void setEsq(CaixaArv endereco)
+	public void setEsq(CaixaArvore endereco)
 	{
 		this.esq=endereco;
 	}
 	
-	public CaixaArv getdir()
+	public CaixaArvore getDir()
 	{
 		return this.dir;
 	}
 	
-	public CaixaArv getesq()
+	public CaixaArvore getEsq()
 	{
 		return this.esq;
 	}
