@@ -1,177 +1,43 @@
-public class Caixarv 
+public class Caixarv
 {
-    public Caixarv() 
+    private Caixarv esq;
+    private Caixarv dir;
+    private String valor;
+
+    public Caixarv(String valorn)
     {
+        setValor(valorn);
+        setEsq(null);
+        setDir(null);
+    }
 
-        private CaixaArvore cx1, cx2, cx3, cx4, cx5;
-        private CaixaArvore aux, raiz;
+    public void setEsq(Caixarv endereco)
+    {
+        this.esq=endereco;
+    }
 
-        public void criacx1(int v)
-        {
-            cx1=new CaixaArvore(v);
-            raiz=cx1;
-        }   
+    public void setDir(Caixarv endereco)
+    {
+        this.dir=endereco;
+    }
 
-        public void criacx2(int v)
-        {
-            cx2=new CaixaArvore(v);
+    public Caixarv getEsq()
+    {
+        return this.esq;
+    }
 
-            if(v<cx1.getValor())
-            {
-                cx1.setEsq(cx2);
-            }
-            else
-            {
-                cx1.setDir(cx2);
-            }
-        }
+    public Caixarv getDir()
+    {
+        return this.dir;
+    }
 
-        public void criacx3(int v)
-        {
-            cx3=new CaixaArvore(v);
-            aux=raiz;
-            
-            while(aux!=null)
-            {
-                if(v<aux.getValor())
-                {
-                    if(aux.getEsq()==null)
-                    {
-                        aux.setEsq(cx3);
-                        break;
-                    }
-                    else
-                    {
-                        aux=aux.getEsq();
-                    }
-                }
+    public void setValor(String v)
+    {
+        this.valor=v;
+    }
 
-                if(v>=aux.getValor())
-                {
-                    if(aux.getDir()==null)
-                    {
-                        aux.setDir(cx3);
-                        break;
-                    }
-                    else
-                    {
-                        aux=aux.getDir();
-                    }
-                }
-            }
-        }
-
-        public void criacx4(int v)
-        {
-            cx4=new CaixaArvore(v);
-            aux=raiz;
-            
-            while(aux!=null)
-            {
-                if(v<aux.getValor())
-                {
-                    if(aux.getEsq()==null)
-                    {
-                        aux.setEsq(cx4);
-                        break;
-                    }
-                    else
-                    {
-                        aux=aux.getEsq();
-                    }
-                }
-
-                if(v>=aux.getValor())
-                {
-                    if(aux.getDir()==null)
-                    {
-                        aux.setDir(cx4);
-                        break;
-                    }
-                    else
-                    {
-                        aux=aux.getDir();
-                    }
-                }
-            }
-        }
-
-        public void criacx5(int v)
-        {
-            cx5=new CaixaArvore(v);
-            aux=raiz;
-            
-            while(aux!=null)
-            {
-                if(v<aux.getValor())
-                {
-                    if(aux.getEsq()==null)
-                    {
-                        aux.setEsq(cx5);
-                        break;
-                    }
-                    else
-                    {
-                        aux=aux.getEsq();
-                    }
-                }
-
-                if(v>=aux.getValor())
-                {
-                    if(aux.getDir()==null)
-                    {
-                        aux.setDir(cx5);
-                        break;
-                    }
-                    else
-                    {
-                        aux=aux.getDir();
-                    }
-                }
-            }
-        } 
-
-        public void mostrav()
-        {
-            Scanner teclado;
-            teclado=new Scanner(System.in);
-            String tecla="";
-            aux=raiz;
-
-            while(aux!=null)
-            {
-                System.out.print("\n valor=" +aux.getValor());
-                System.out.print("\n (E)sq, (D)ir, (F)im?");
-                tecla=teclado.nextLine();
-
-                if(tecla.equals("E"))
-                    aux=aux.getEsq();
-
-                if(tecla.equals("D"))
-                    aux=aux.getDir();
-
-                if(tecla.equals("F"))
-                    break;
-            }
-            System.out.print("\n Fim \n");
-        }
-        
-        public void mostratudo()
-        {
-            mostrarecursivo(raiz);
-        }
-
-        public void mostrarecursivo(CaixaArvore c)
-        {
-            if(c==null)
-            {
-                return;
-            }
-
-            //decrescente
-            mostrarecursivo(c.getEsq());
-            System.out.print("\n valor=" + c.getValor());
-            mostrarecursivo(c.getDir());
-        }
-    }   
+    public String getValor()
+    {
+        return this.valor;
+    }
 }
